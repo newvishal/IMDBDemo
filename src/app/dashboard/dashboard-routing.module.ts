@@ -1,0 +1,22 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddMovieComponent } from './movies/add-movie/add-movie.component';
+import { MovieListComponent } from './movies/movie-list/movie-list.component';
+
+const routes: Routes = [
+  {
+    path: 'Dashboard', 
+    component: DashboardComponent,
+    children: [
+      { path: 'list', component: MovieListComponent },
+      { path: 'add', component: AddMovieComponent },
+    ]
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class DashboardRoutingModule { }
