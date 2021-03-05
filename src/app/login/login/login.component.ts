@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   onSubmit() {
     this.submitted = true
     if(this.loginForm.invalid) return
-    this.router.navigate(['Dashboard']);
+    this.router.navigate(['dashboard']);
     console.log(this.loginForm.value);
   }
 
