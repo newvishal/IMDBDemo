@@ -8,7 +8,7 @@ import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
 
 const routes: Routes = [
   {
-    path: 'Dashboard', 
+    path: '', 
     component: DashboardComponent,
     children: [
       { path: 'list', component: MovieListComponent },
