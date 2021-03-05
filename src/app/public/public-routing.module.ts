@@ -6,7 +6,7 @@ import { RatingComponent } from './rating/rating.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'rating', component: RatingComponent}
+  {path: 'rating/:m_id', component: RatingComponent}
 ];
 
 @NgModule({
