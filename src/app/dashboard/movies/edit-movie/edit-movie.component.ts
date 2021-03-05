@@ -2,11 +2,11 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
-  selector: 'app-add-movie',
-  templateUrl: './add-movie.component.html',
-  styleUrls: ['./add-movie.component.scss']
+  selector: 'app-edit-movie',
+  templateUrl: './edit-movie.component.html',
+  styleUrls: ['./edit-movie.component.scss']
 })
-export class AddMovieComponent implements OnInit {
+export class EditMovieComponent implements OnInit {
 
   movieForm: FormGroup
   submitted = false
@@ -15,7 +15,7 @@ export class AddMovieComponent implements OnInit {
   constructor(public fb: FormBuilder) { }
 
   ngOnInit(): void {
-       this.createMovieForm()
+    this.createMovieForm()
   }
 
   uploadFile(event) {
@@ -37,7 +37,7 @@ export class AddMovieComponent implements OnInit {
     })
   }
 
-  addMovie() {
+  editMovie() {
     this.submitted = true
     if(this.movieForm.invalid) return
     console.log(this.movieForm.value)

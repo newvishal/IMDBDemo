@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddMovieComponent } from './movies/add-movie/add-movie.component';
 import { MovieListComponent } from './movies/movie-list/movie-list.component';
+import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
 
 const routes: Routes = [
   {
@@ -11,6 +13,7 @@ const routes: Routes = [
     children: [
       { path: 'list', component: MovieListComponent },
       { path: 'add', component: AddMovieComponent },
+      { path: 'edit/:id', component: EditMovieComponent }
     ]
   }
 ];
