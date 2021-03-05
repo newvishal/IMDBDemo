@@ -3,8 +3,6 @@ import { HttpClient , HttpHeaders} from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
 
-import {Movies} from '../dashboard/movies/movie'
-
 @Injectable({
   providedIn: 'root'
 })
@@ -19,7 +17,7 @@ export class MovieService {
       'Access-Control-Allow-Origin': '*'
     });
     const options = { headers: headers };
-    return this.http.get(`${environment.apiUrl}`, options);
+    return this.http.get(`${environment.apiUrl}/api/Movies/GetMovie`, options);
   }
 
   getMovieId(movieId: string) {
@@ -32,24 +30,24 @@ export class MovieService {
     return this.http.get(`${environment.apiUrl}`, options);
   }
 
-  addMovie(movie: Movies) {
+  addMovie(movie: any) {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json; charset=utf-8',
       'Authorization': '',
       'Access-Control-Allow-Origin': '*'
     });
     const options = { headers: headers };
-    return this.http.post(`${environment.apiUrl}`, movie, options);
+    return this.http.post(`${environment.apiUrl}/​api​/Movies`, movie, options);
   }
 
-  updateMovie(movieId: string, movie: Movies) {
+  updateMovie(movie: any) {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json; charset=utf-8',
       'Authorization': '',
       'Access-Control-Allow-Origin': '*'
     });
     const options = { headers: headers };
-    return this.http.put(`${environment.apiUrl}`, movie, options);
+    return this.http.put(`${environment.apiUrl}/​api​/Movies`, movie, options);
   }
 
   removeMovie(movieId: string) {
@@ -59,6 +57,6 @@ export class MovieService {
       'Access-Control-Allow-Origin': '*'
     });
     const options = { headers: headers };
-    return this.http.delete(`${environment.apiUrl}`, options);
+    return this.http.delete(`${environment.apiUrl}/api/Movies/DeleteMovie?ID=${movieId}`, options);
   }
 }

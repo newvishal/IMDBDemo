@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 
+import { MovieService } from 'src/app/services/movie.service';
+
 @Component({
   selector: 'app-add-movie',
   templateUrl: './add-movie.component.html',
@@ -12,7 +14,9 @@ export class AddMovieComponent implements OnInit {
   submitted = false
   @ViewChild('fileInput') el: ElementRef;
 
-  constructor(public fb: FormBuilder) { }
+  constructor(
+      public fb: FormBuilder,
+      public movieService: MovieService) { }
 
   ngOnInit(): void {
        this.createMovieForm()
@@ -40,7 +44,20 @@ export class AddMovieComponent implements OnInit {
   addMovie() {
     this.submitted = true
     if(this.movieForm.invalid) return
-    console.log(this.movieForm.value)
+    const formData = new FormData();
+    formData.append("ID", '0')
+    formData.append("MovieName", this.movieForm.value['MovieName'])
+    formData.append("Poster", this.movieForm.value['Poster'])
+    formData.append("Description", this.movieForm.value['Description'])
+    formData.append("MovieYear", this.movieForm.value['MovieYear'])
+    formData.append("Directors", this.movieForm.value['Directors'])
+    formData.append("ReleaseDate", this.movieForm.value['ReleaseDate'])
+    
+    this.movieService.addMovie(formData).subscribe((res) => {
+        console.log(res)
+    }, (err) => {
+        console.log(err)
+    })
   }
 
   get getMovieForm() {
