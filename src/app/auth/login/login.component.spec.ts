@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
 import { LoginServiceMock } from 'src/tests/mocks/services/login-service.mock';
 
-fdescribe('LoginComponent', () => {
+describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
 
