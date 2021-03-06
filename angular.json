@@ -30,7 +30,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/plugins/jquery/jquery.min.js",
+              "src/assets/plugins/bootstrap/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,24 +97,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/plugins/jquery/jquery.min.js",
-              "src/assets/plugins/bootstrap/js/bootstrap.js",
-              "src/assets/plugins/bootstrap-select/js/bootstrap-select.js",
-              "src/assets/plugins/jquery-slimscroll/jquery.slimscroll.js",
-              "src/assets/plugins/node-waves/waves.js",
-              "src/assets/plugins/jquery-countto/jquery.countTo.js",
-              "src/assets/plugins/raphael/raphael.min.js",
-              "src/assets/plugins/morrisjs/morris.js",
-              "src/assets/plugins/chartjs/Chart.bundle.js",
-              "src/assets/plugins/flot-charts/jquery.flot.js",
-              "src/assets/plugins/flot-charts/jquery.flot.resize.js",
-              "src/assets/plugins/flot-charts/jquery.flot.pie.js",
-              "src/assets/plugins/flot-charts/jquery.flot.categories.js",
-              "src/assets/plugins/flot-charts/jquery.flot.time.js",
-              "src/assets/plugins/jquery-sparkline/jquery.sparkline.js",
-              "src/assets/js/admin.js",
-              "src/assets/js/pages/index.js",
-              "src/assets/js/demo.js"
+             
             ]
           }
         },

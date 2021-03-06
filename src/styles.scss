@@ -5,3 +5,14 @@
 @import url(assets/plugins/morrisjs/morris.css);
 @import url(assets/css/style.css);
 @import url(assets/css/themes/all-themes.css);
+
+.modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+}

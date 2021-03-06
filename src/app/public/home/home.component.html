@@ -9,8 +9,10 @@
                       </h2>
                  </div>
                  <div class="col-lg-6">
-                    <a href="javascript:void(0)" style="float: right;" class="btn btn-success" [routerLink]="['/auth/login']" routerLinkActive="router-link-active" >Login</a>
-                 </div>
+                    <!-- <a href="javascript:void(0)" style="float: right;" class="btn btn-success" [routerLink]="['/auth/login']" routerLinkActive="router-link-active" >Login</a> -->
+                    <button type="button" style="float: right;" class="btn btn-default waves-effect m-r-20" data-toggle="modal" data-target="#login">Login</button>
+                    <button type="button" style="float: right;" class="btn btn-default waves-effect m-r-20" data-toggle="modal" data-target="#register">Register</button>
+                  </div>
              </div>
          </div> 
         
@@ -76,6 +78,130 @@
                 </div>
               </div>
               <div class="blur_back bright_back"></div>
+          </div>
+        </div>
+        <!-- login -->
+        <div class="modal fade" id="login" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="defaultModalLabel">Sign in to start your session</h4>
+                  </div>
+                  <form
+                  id="sign_in"
+                  [formGroup]="loginForm"
+                  (ngSubmit)="onLoginSubmit()"
+                  novalidate="novalidate"
+                  >
+                    <div class="modal-body">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="material-icons">person</i>
+                        </span>
+                        <div class="form-line">
+                          <input
+                            type="text"
+                            class="form-control"
+                            formControlName="username"
+                            placeholder="Username"
+                            autofocus
+                          />
+                        </div>
+                        <p
+                          class="text-danger"
+                          *ngIf="submitted && getLoginForm.username.errors?.required"
+                        >
+                          Please enter Username.
+                        </p>
+                      </div>
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="material-icons">lock</i>
+                        </span>
+                        <div class="form-line">
+                          <input
+                            type="password"
+                            class="form-control"
+                            formControlName="password"
+                            placeholder="Password"
+                          />
+                        </div>
+                        <p
+                          class="text-danger"
+                          *ngIf="submitted && getLoginForm.password.errors?.required"
+                        >
+                          Please enter Password.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success waves-effect">Login</button>
+                        <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Close</button>
+                    </div>
+                  </form>  
+              </div>
+          </div>
+        </div>
+        <!-- Register -->
+        <div class="modal" id="register" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="defaultModalLabel">Register</h4>
+                  </div>
+                  <form
+                    id="sign_up"
+                    [formGroup]="registerForm"
+                    (ngSubmit)="onRegisterSubmit()"
+                    novalidate="novalidate"
+                  >
+                    <div class="modal-body">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="material-icons">person</i>
+                        </span>
+                        <div class="form-line">
+                          <input
+                            type="text"
+                            class="form-control"
+                            formControlName="username"
+                            placeholder="Username"
+                            autofocus
+                          />
+                        </div>
+                        <p
+                          class="text-danger"
+                          *ngIf="submitted && getregisterForm.username.errors?.required"
+                        >
+                          Please enter Username.
+                        </p>
+                      </div>
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="material-icons">lock</i>
+                        </span>
+                        <div class="form-line">
+                          <input
+                            type="password"
+                            class="form-control"
+                            formControlName="password"
+                            placeholder="Password"
+                          />
+                        </div>
+                        <p
+                          class="text-danger"
+                          *ngIf="submitted && getregisterForm.password.errors?.required"
+                        >
+                          Please enter Password.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success waves-effect">Register</button>
+                        <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Close</button>
+                    </div>
+                  </form>
+              </div>
           </div>
         </div>
       </div>
