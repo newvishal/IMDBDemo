@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   onSubmit() {
     this.submitted = true
     if(this.loginForm.invalid) return
+    console.log(this.loginForm.value)
     const formData = new FormData()
     formData.append("username", this.loginForm.value['username'])
     formData.append("password", this.loginForm.value['password'])
