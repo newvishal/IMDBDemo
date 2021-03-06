@@ -9,7 +9,7 @@
                       </h2>
                  </div>
                  <div class="col-lg-6">
-                    <a href="javascript:void(0)" style="float: right;" class="btn btn-success" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a>
+                    <a href="javascript:void(0)" style="float: right;" class="btn btn-success" [routerLink]="['/auth/login']" routerLinkActive="router-link-active" >Login</a>
                  </div>
              </div>
          </div> 
@@ -38,14 +38,8 @@
                 </p>
               </div>
               <div class="movie_social">
-                  <small>Rating</small>
-                  <ul>
-                    <li><i class="material-icons checked">star</i></li>
-                    <li><i class="material-icons checked">star</i></li>
-                    <li><i class="material-icons checked">star</i></li>
-                    <li><i class="material-icons">star</i></li>
-                    <li><i class="material-icons">star</i></li>
-                  </ul>
+                <a [routerLink]="['/rating', '120']" class="btn btn-info"
+                routerLinkActive="router-link-active">Rating</a>
               </div>
             </div>
             <div class="blur_back bright_back"></div>
@@ -70,14 +64,15 @@
                   </p>
                 </div>
                 <div class="movie_social">
-                    <small>Rating</small>
-                    <ul>
+                     <a [routerLink]="['/rating', '120']" class="btn btn-info"
+                     routerLinkActive="router-link-active">Rating</a>
+                   <!-- <ul>
                       <li><i class="material-icons checked">star</i></li>
                       <li><i class="material-icons checked">star</i></li>
                       <li><i class="material-icons checked">star</i></li>
                       <li><i class="material-icons">star</i></li>
                       <li><i class="material-icons">star</i></li>
-                    </ul>
+                    </ul> -->
                 </div>
               </div>
               <div class="blur_back bright_back"></div>

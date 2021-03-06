@@ -59,4 +59,14 @@ export class MovieService {
     const options = { headers: headers };
     return this.http.delete(`${environment.apiUrl}/api/Movies/DeleteMovie?ID=${movieId}`, options);
   }
+
+  addRating(rating: any) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+      'Authorization': '',
+      'Access-Control-Allow-Origin': '*'
+    });
+    const options = { headers: headers };
+    return this.http.post(`${environment.apiUrl}/​api​/rating`, rating, options);
+  }
 }

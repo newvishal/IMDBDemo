@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
@@ -10,6 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit, OnDestroy {
+
   loginForm: FormGroup
   submitted = false 
   constructor (
