@@ -15,7 +15,7 @@ export class LoginService {
         "Access-Control-Allow-Origin": "*",
       })
       const options = { headers: headers };
-      return this.http.post(`${environment.apiUrl}authenticate`, data, options)
+      return this.http.post(`${environment.apiUrl}/api/User/login`, data, options)
   }
 
   isLoggedin(){
